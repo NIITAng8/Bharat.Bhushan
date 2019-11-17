@@ -38,3 +38,40 @@ let Count_Occurence = (phrase_text:string) => {
     console.log(word_occrnc_map);
 }
 Count_Occurence("Delhi city is the most polluted city in India."); 
+
+console.log("");
+
+console.log("======================= Program -6 : Determine if a triangle is equilateral, isosceles, or scalene =======================");
+
+class Triangle{
+    side1:number;
+    side2:number;
+    side3:number;
+
+    constructor(side_a:number, side_b:number,side_c:number)
+    {
+        this.side1 = side_a;
+        this.side2 = side_b;
+        this.side3 = side_c;
+    }
+
+    TriangleType():string{
+        let trngl_typ:string = "";
+        if(this.side1 == this.side2 && this.side2 == this.side3)
+        {
+         trngl_typ = "This is an Equilateral triangle";
+        }
+        else if(this.side1 == this.side2 || this.side1 == this.side3 || this.side2 == this.side3)
+	{
+        trngl_typ = "This is an Isosceles triangle";
+        }
+	else
+	{
+            trngl_typ = "This is a Scalene triangle";
+        }
+        return trngl_typ;
+    }
+}
+
+let _trngl = new Triangle(10,8,10);
+console.log(_trngl.TriangleType());
