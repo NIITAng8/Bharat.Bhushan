@@ -75,3 +75,21 @@ class Triangle{
 
 let _trngl = new Triangle(10,8,10);
 console.log(_trngl.TriangleType());
+
+console.log("");
+
+console.log("======================= Program -7 : Calculate age in years on different planets of solar system =======================")
+
+let DaysInYear = new Map<string,number>();
+DaysInYear.set("Earth",365);
+DaysInYear.set("Mars",687);
+DaysInYear.set("Jupiter",4333);
+
+let AgeInYrs = (ageInSecs:number,planet:string):void => {
+    let _ageInYears = ageInSecs / (3600*24*DaysInYear.get(planet));
+    console.log(Math.round(_ageInYears));
+}
+
+AgeInYrs(2820000000,"Earth");
+AgeInYrs(2820000000,"Mars");
+AgeInYrs(2820000000,"Jupiter");
